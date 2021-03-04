@@ -3,7 +3,6 @@ import modules
 
 task_list = """
 1- Manage Duplicates
-2- Remove NULL
 """
 
 def import_df():
@@ -30,7 +29,6 @@ def switch():
 
 
 def main():
-    #import_df()
     switch()
 
 while(True):
