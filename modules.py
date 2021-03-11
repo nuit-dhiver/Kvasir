@@ -19,7 +19,7 @@ def rm_duplicates(df):
 
         else:
             print("Okay!")
-            main()
+            main.main()
 
     elif subset_status.capitalize == "Y":
 
@@ -37,11 +37,22 @@ def rm_duplicates(df):
 
         else:
             print("Okay!")
-            main()
+            main.main()
         
     else:
         print("Input is incorrct.")
-        main()
+        main.main()
+
+
+def missing_data(df):
+    
+    print("Null values on each column:\n" + str(df.isna().sum()))
+    
+    do_imputation = input("Do you want to imput the missing data?").capitalize()
+    if do_imputation == "Y":
+        print("This will be supported soon :)")
+    else:
+        main.main()
 
 
 
