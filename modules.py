@@ -45,12 +45,12 @@ def rm_duplicates(df):
 
 
 def missing_data(df):
-    
+    import imput
     print("Null values on each column:\n" + str(df.isna().sum()))
     
-    do_imputation = input("Do you want to imput the missing data?").capitalize()
-    if do_imputation == "Y":
-        print("This will be supported soon :)")
+    do_imputation = input("Do you want to imput the missing data?(yes/no)")
+    if do_imputation.capitalize() == "Y":
+        imput.main(df)
     else:
         main.main()
 
