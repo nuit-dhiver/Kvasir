@@ -19,7 +19,7 @@ def rm_duplicates(df):
 
         else:
             print("Okay!")
-            main.main()
+            
 
     elif subset_status.capitalize == "Y":
 
@@ -27,7 +27,7 @@ def rm_duplicates(df):
         subset = raw_subset.split(",")
         num_of_duplicates = str(df.duplicated(subset = subset).sum())
         print("There is " + num_of_duplicates + " duplicated rows.\n")
-        remove_or_not = str(input("Do you want to remove them?(Y/N): "))
+        remove_or_not = str(input("Do you want to remove them?(y/n): "))
 
         if remove_or_not.capitalize() == "Y":
             df.drop_duplicates(subset = subset, inplace = True)
@@ -37,22 +37,24 @@ def rm_duplicates(df):
 
         else:
             print("Okay!")
-            main.main()
+            
         
     else:
         print("Input is incorrct.")
-        main.main()
+        
 
 
 def missing_data(df):
     import imput
     print("Null values on each column:\n" + str(df.isna().sum()))
     
-    do_imputation = input("Do you want to imput the missing data?(yes/no)")
+    do_imputation = input("Do you want to imput the missing data?(y/n)")
     if do_imputation.capitalize() == "Y":
         imput.main(df)
-    else:
-        main.main()
+    
+
+
+
 
 
 

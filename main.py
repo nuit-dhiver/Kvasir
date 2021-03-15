@@ -13,11 +13,11 @@ def import_df():
     
     if extension[-1] == "csv":
         df = pd.read_csv(file_path)
-        df.reset_index(inplace=True)
+        #df.reset_index(inplace=True)
         return df
     elif extension[-1] == "xlsx" or extension[-1] == "xls":
         df = pd.read_excel(file_path)
-        df.reset_index(inplace=True)
+        #df.reset_index(inplace=True)
         return df
     else:
         print("Only .csv .xlsx and .xls files are supported.")
@@ -28,7 +28,7 @@ def import_df():
 def switch(df):
 
     print(task_list)
-    user_task = int(input("What do you want to do?"))
+    user_task = int(input("What do you want to do?: "))
 
     if user_task == 1:
         modules.rm_duplicates(df)
