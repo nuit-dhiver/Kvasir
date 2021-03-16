@@ -2,8 +2,11 @@ import pandas as pd
 import modules
 
 task_list = """
-1- Manage Duplicates
-2- Dealing with missing Data
+1.Explore Dataset
+2.Manage Duplicates
+3.Dealing with missing Data
+4.Import another dataset
+100.Quit
 """
 
 def import_df():
@@ -31,11 +34,20 @@ def switch(df):
     user_task = int(input("What do you want to do?: "))
 
     if user_task == 1:
+        modules.explore(df)
+        main()
+    elif user_task == 2:
         modules.rm_duplicates(df)
         main()
-    elif user_task ==2:
+    elif user_task ==3 :
         modules.missing_data(df)
         main()
+    elif user_task == 4:
+        df = import_df()
+        main
+    elif user_task == 100:
+        print("Come here again.")
+        quit()
     else:
         print("Pleas choose a number from list above!")
         main()
@@ -44,8 +56,9 @@ def switch(df):
 
 
 def main():
-    df = import_df()
     switch(df)
+
+df = import_df()
 
 while(True):
     main()

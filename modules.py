@@ -51,6 +51,22 @@ def missing_data(df):
     do_imputation = input("Do you want to imput the missing data?(y/n)")
     if do_imputation.capitalize() == "Y":
         imput.main(df)
+
+def explore(df):
+    import numpy as np
+    import pandas as pd
+    pd.set_option("display.max.columns", None)
+    pd.set_option("display.precision", 2)
+
+    print("Top 10 rows:")
+    print(df.head(10))
+    print("\n---------------------\n")
+    print("Basic statistics:")
+    print(df.describe())
+    print("\n---------------------\n")
+    print("Columns and Data Types:")
+    print(df.info())
+
     
 
 
